@@ -1,5 +1,6 @@
 // components
 import FirstComponent from './components/firstComponent'
+import TemplateExpression from './components/TemplateExpressions'
 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -13,6 +14,7 @@ function App() {
     <>
       <h1>Fundamentos React</h1>
       <FirstComponent/>
+      <TemplateExpression/>
     </>
   )
 }
