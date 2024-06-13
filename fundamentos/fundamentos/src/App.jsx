@@ -3,6 +3,7 @@ import FirstComponent from './components/FirstComponent'
 import TemplateExpression from './components/TemplateExpressions'
 import MyComponent from './components/MyComponent'
 import Events from './components/Events'
+import Challenge from './components/Challenge'
 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -19,6 +20,7 @@ function App() {
       <TemplateExpression/>
       <MyComponent/>
       <Events/>
+      <Challenge/>
     </>
   )
 }
