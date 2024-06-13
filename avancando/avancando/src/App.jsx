@@ -9,6 +9,10 @@ function App() {
   return (
     <>
       <h1>Seção 3</h1>
+        {/* Imagem em public */}
+      <div>
+        <img src="/img1.jpg" alt="Paisagem" />
+      </div>
     </>
   )
 }
