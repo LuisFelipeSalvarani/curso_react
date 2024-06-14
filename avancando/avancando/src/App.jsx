@@ -14,6 +14,7 @@ import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
 import Message from './components/Message'
 import ChangeMessageState from './components/ChangeMessageState'
+import UserDatails from './components/UserDatails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,12 @@ function App() {
   const handleMessage = (msg) => {
     setMessage(msg)
   }
+
+  const users = [
+    {id: 1, name: "João", age: 17, job: "Estudante"},
+    {id: 2, name: "Marta", age: 30, job: "Arquiteta"},
+    {id: 3, name: "Mario", age: 26, job: "Programador"}
+  ]
 
   return (
     <>
@@ -75,6 +82,9 @@ function App() {
       {/* state lift */}
       <Message msg={message}/>
       <ChangeMessageState handleMessage={handleMessage}/>
+      {users.map((user) => (
+        <UserDatails key={user.id} name={user.name} age={user.age} job={user.job} />
+      ))}
     </>
   )
 }
