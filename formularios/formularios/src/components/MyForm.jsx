@@ -6,6 +6,7 @@ const MyForm = ({user}) => {
     // 3 - gerenciamento de dados
     const [name, setName] = useState(user ? user.name : "")
     const [email, setEmail] = useState(user ? user.email : "")
+    const [bio, setBio] = useState()
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -17,11 +18,12 @@ const MyForm = ({user}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Enviando o formulário")
-        console.log(name, email)
+        console.log(name, email, bio)
 
         // 7 - limpar form
         setName("")
         setEmail("")
+        setBio("")
     }
 
   return (
@@ -38,6 +40,11 @@ const MyForm = ({user}) => {
                 <span>E-mail</span>
                 {/* 4 - Simplificação de manipulação de state */}
                 <input type="email" name='email' placeholder='Digite o seu e-mail' onChange={(e) => setEmail(e.target.value)} value={email}/>
+            </label>
+            {/* 8 - textarea */}
+            <label>
+                <span>Bio:</span>
+                <textarea name="bio" placeholder='Descrição do usuário' onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
             </label>
             <input type="submit" value="Enviar" />
         </form>
