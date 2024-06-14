@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,10 +9,11 @@ import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
+import Fragments from './components/Fragment'
 
 function App() {
   const [count, setCount] = useState(0)
-  const name = "Joaquim"
+  // const name = "Joaquim"
   const [useName] = useState("Maria")
 
   const cars = [
@@ -44,9 +45,10 @@ function App() {
       <CarDetails brand="Fiat" km={4500} color="Branco" newCar={false}/>
       {/* loop em array de objetos */}
       {cars.map((car) => (
-        <CarDetails brand={car.brand} color={car.color} newCar={car.newCar} km={car.km}/>
-      ))}
-      
+        <CarDetails key={car.id} brand={car.brand} color={car.color} newCar={car.newCar} km={car.km}/>
+        ))}
+      {/* fragment */}
+      <Fragments propFragment="teste"/>
     </>
   )
 }
