@@ -10,6 +10,7 @@ import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
 import Fragments from './components/Fragment'
+import Container from './components/Container'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -49,6 +50,13 @@ function App() {
         ))}
       {/* fragment */}
       <Fragments propFragment="teste"/>
+      {/* children */}
+      <Container myValue="testing">
+        <p>e Este é o conteúdo</p>
+      </Container>
+      <Container myValue="testing 2">
+        <h5>Testando o container</h5>
+      </Container>
     </>
   )
 }
