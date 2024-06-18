@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 // 4 - custom hook
 import { useFetch } from './hooks/useFetch'
 
-const url = "http://localhost:3000/products/"
+const url = "http://localhost:3000/products"
 
 function App() {
   const [products, setProducts] = useState([])
@@ -57,6 +57,11 @@ function App() {
     setPrice("")
   }
 
+  // 8 - dasafio 6
+  const handleRemove = (id) => {
+    httpConfig(id, "DELETE")
+  }
+
   return (
     <>
       <h1>Lista de Produtos</h1>
@@ -66,7 +71,10 @@ function App() {
       {!error && 
       <ul>
         {items && items.map((product) => (
-          <li key={product.id}>{product.name} - R$: {product.price}</li>
+          <li key={product.id}>
+            {product.name} - R$: {product.price}
+            <button onClick={() => handleRemove(product.id)}>Excluir</button>
+          </li>
         ))}
       </ul>}
       <div className="add-product">
